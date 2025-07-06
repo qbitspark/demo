@@ -25,7 +25,7 @@ pipeline {
                 sh '''
                     docker stop my-app || true
                     docker rm my-app || true
-                    docker run -d -p 8080:8080 --name my-app my-spring-app
+                    docker run -d -p 8081:8080 --name my-app my-spring-app
                 '''
             }
         }
@@ -34,7 +34,7 @@ pipeline {
             steps {
                 sh '''
                     sleep 10
-                    curl -f http://localhost:8080 || echo "Health check failed, but continuing..."
+                    curl -f http://localhost:8081 || echo "Health check failed, but continuing..."
                 '''
             }
         }
