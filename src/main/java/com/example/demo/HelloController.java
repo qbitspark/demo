@@ -8,6 +8,6 @@ public class HelloController {
 
     @GetMapping("/")
     public String hello() {
-        return "Hello World! This is version 2.0 - deployed automatically by Jenkins!";
+        return "Auto Hello World! This is version 2.0 - deployed automatically by Jenkins!";
     }
 }
